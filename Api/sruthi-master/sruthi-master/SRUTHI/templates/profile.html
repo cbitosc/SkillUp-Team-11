@@ -1,0 +1,142 @@
+{%load static%}
+<HTML>
+    <HEAD>
+        <title>WELCOME TP YOUR PROFILE {{user.name}} </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image:url(img2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        text-align: center;
+        padding: 20px;
+    }
+    .register{
+         background: afff;
+         width: 500px;
+         margin: 0px 0px 0px 430px;
+         color:violet;
+         font-size: 18;
+         padding: 20px;
+         border-radius:10px;
+    }
+    #register{
+        margin-left: 50px;
+    
+    }
+    label{
+        color:blue;
+        font-family:merlin;
+        font-size: 18px;
+    }
+    #name{
+        width:300px;
+        border:black;
+        border-radius:3px;
+        outline:0;
+        padding:7px;
+    }
+    
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+    
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+    
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+    
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+    
+    button:hover, a:hover {
+      opacity: 0.7;
+    }
+    </style>
+    </HEAD>
+       <BODY>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">WebSiteName</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li><a href="#">Home</a></li>
+                  <li  class="active"><a href="http://127.0.0.1:8000/user/user_login/">USER LOGIN</a></li>
+			      <li><a href="http://127.0.0.1:8000/user/user_registration/">USER REGISTARTION</a></li>
+			    <li><a href="http://127.0.0.1:8000/Myadmin/">ADMIN</a></li>
+			</ul>
+                
+              </div>
+            </div>
+          </nav>
+
+          {%if user_list%}
+          {%for user in user_list%}
+
+          <h2 style="text-align:center" "background-color:grey">{{user.name}} Profile </h2>
+
+          <div class="card" text-align:left>
+            <h2>Name: {{user.name}}</h2><br>
+            <h2>Rollno: {{user.Rollno}}</h2><br>
+            <h2>Year: {{user.year}}</h2><br>
+            <h2>Branch: {{user.Branch}}.</h2><br>
+            <p><h2> College: {{user.college}}</h2></p>
+            <div style="margin: 24px 0;">
+              <a href="#"><i class="fa fa-dribbble"></i></a> 
+              <a href="#"><i class="fa fa-twitter"></i></a>  
+              <a href="#"><i class="fa fa-linkedin"></i></a>  
+              <a href="#"><i class="fa fa-facebook"></i></a> 
+            </div>
+            <p>Contact:</p>
+            <h4>Mobile: {{user.mobile_no}}<br>
+                E Mail: {{user.email_id}}
+            </h4>
+          </div>
+            
+    {%endfor%}
+    {%endif%}
+     
+       </BODY>
+    </HTML>
+    
